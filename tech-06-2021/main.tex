@@ -1,0 +1,210 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\hyphenpenalty=10000
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.4\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+	\HUGE\textcolor{dark-gray}{\textbf{Andrew}} % First name
+	
+	\HUGE\textcolor{dark-gray}{\textbf{\MakeUppercase{Kincaid}}}% Last name
+	
+	\vspace{-12pt}
+	
+	{\Huge Quantitative Analyst} % Career or current job title
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\href{https://goo.gl/maps/SopACeDkvoBLaGoo9}{\icon{MapMarker}{12}{Chatham, NJ}}\\
+	\href{tel:+19086426883}{\icon{Phone}{12}{+1 (908) 642-6883}}\\
+	\href{mailto:atkincaid74@gmail.com?subject=Please come work for us}{\icon{Envelope}{12}{ATKincaid74@gmail.com}}\\
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\href{http://www.andrew-kincaid.com/resume/}{\icon{Globe}{12}{andrew-kincaid.com}}\\
+	\href{https://github.com/atkincaid74}{\icon{Github}{12}{github.com/atkincaid74}}\\
+	\href{https://www.linkedin.com/in/a-t-kin/}{\icon{Linkedin}{12}{LinkedIn.com/in/a-t-kin}}\\
+\end{minipage}
+
+\vspace{0.25cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\cvsect{Summary}
+
+\begin{minipage}[t]{0.50\textwidth} % 40% of the page width for the introduction text
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\vspace{0pt} 
+	Quantitative Analyst by title, full-stack developer by trade.
+	4+ years developing a full-stack web application from the ground up, with ownership of the python package responsible for all insurance-related models.
+	Fast-learner and a team player with a strong work ethic.
+	Passionate about using my problem-solving skills to find creative solutions.
+	Dedicated to writing efficient, yet practical code.
+\end{minipage}
+\hspace{0.5cm} % Whitespace between
+\begin{minipage}[t]{0.50\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-31pt}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\cvsect{Skills} 
+	\begin{barchart}{5}
+		\baritem{\href{https://en.wikipedia.org/wiki/Python\_(programming\_language)}{Python}}{100}
+		\baritem{\href{https://en.wikipedia.org/wiki/SQL}{SQL}}{92}
+		\baritem{\href{https://en.wikipedia.org/wiki/Visual\_Basic\_for\_Applications}{MS Office/VBA}}{65}
+		%\baritem{\href{https://en.wikipedia.org/wiki/Data\_scraping}{Data Scraping}}{40}
+		\baritem{\href{https://en.wikipedia.org/wiki/Git}{Git}}{85}
+		%\baritem{\href{https://en.wikipedia.org/wiki/JavaScript}{JavaScript}}{60}
+		%\baritem{\href{https://en.wikipedia.org/wiki/html}{HTML}}{70}
+		\baritem{\href{https://en.wikipedia.org/wiki/Vue.js}{Vue.js}}{70}
+		\baritem{\href{https://en.wikipedia.org/wiki/Docker\_(software)}{Docker}}{50}
+	\end{barchart}
+\end{minipage}
+
+\vspace{0.25cm}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\vspace{-6pt}
+\cvsect{Experience}
+
+\begin{entrylist}
+	\vspace{-14pt}
+	\entry
+		{\small12/2019 -- present}
+		{Quantitative Analyst II}
+		{\href{http://www.ambest.com/home/default.aspx}{AM Best Company}}
+		{\vspace{-18pt}
+			\begin{itemize}[leftmargin=*]
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item Owned analytical Python package for the Quantitative Analysis Team, including a capital adequacy model, projection model, and other credit rating tools; reviewed the code for all pull requests to the package to make sure the team's standards were met
+				\item Contributed to the Vue.js single page application and Django API that allowed internal analysts and external clients to interact with the models
+				\item Communicated directly with the analysts using the application to gather feedback and constantly improve the product before and after its official launch
+				\item Worked closely with the system engineer to deploy the application on Red Hat Enterprise Linux servers
+		\end{itemize}
+	\vspace{10pt}}
+	\entry
+		{\small6/2018 -- 12/2019}
+		{Quantitative Analyst I}
+		{\href{http://www.ambest.com/home/default.aspx}{AM Best Company}}
+		{\vspace{-18pt}
+		\begin{itemize}[leftmargin=*]
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item Created the quantitative analysis group's database schemas and objects. Collaborated with the database administrators to constantly enhance the efficiency of the database
+				\item Acted as the representative for my team of developers to the company's IT department to ensure that goals and timelines were aligned
+		\end{itemize}
+	\vspace{-5pt}}
+	\entry
+		{\small6/2017 -- 6/2018}
+		{Associate Analyst}
+		{\href{http://www.ambest.com/home/default.aspx}{AM Best Company}}
+		{\vspace{-18pt}
+			\begin{itemize}[leftmargin=*]
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item 6 week orientation that gave a strong working knowledge of the insurance sector and an in depth look at rating agencies and their role in the market
+				\item Converted a suite of existing MS Excel/VBA models into Python. Brought 8 separate models into one code base to drastically improve maintainability
+		\end{itemize}}
+%	\entry
+%		{\small2016 -- 2018\\\footnotesize{part time}}
+%		{Safety \& Security Staff}
+%		{Duke Farms}
+%		{\lorem\lorem}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\vspace{-0.5cm}
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{\small2012 -- 2016}
+		{B.S. -- Mathematics, Chemistry minor}
+		{\href{https://www.muhlenberg.edu/}{Muhlenberg College}}
+		{\vspace{-18pt}
+			\begin{itemize}[leftmargin=*]
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item Graduated with Honors in Mathematics and a 3.9 major GPA
+				\item Awarded the Harry A Benfer Memorial Scholarship for "promoting goodwill and demonstrating an appreciation for all phases of college life"
+		\end{itemize}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.46\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Exams \& Designations}
+	\vspace{-10pt}
+	\begin{itemize}[leftmargin=*]
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+		\item\href{https://web.theinstitutes.org/designations/associate-insurance-accounting-and-finance}{\textbf{Associate in Insurance Accounting and Finance} - The Institutes}
+		\item\href{https://www.soa.org/education/exam-req/edu-exam-p-detail/}{\textbf{Exams P}} \href{https://www.soa.org/education/exam-req/edu-exam-fm-detail/}{\textbf{and FM}} - \href{https://www.soa.org/}{Society of Actuaries}
+	\end{itemize}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.46\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{References}
+	\vspace{-4pt}
+	
+	Available upon request
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
