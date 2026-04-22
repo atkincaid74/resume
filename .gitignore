@@ -35,3 +35,7 @@ firebase-debug.log
 
 # Local overrides
 firebase-service-account.json
+
+# Claude Code session state (never commit)
+.claude/
+
