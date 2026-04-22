@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { resume } from "../content/resume";
+
+// Computed span (first role's start → last role's end) per company,
+// so the company header signals tenure at a glance.
+const companySpan = (group: (typeof resume.experience)[number]) => {
+  const first = group.roles[0];
+  const last = group.roles[group.roles.length - 1];
+  return `${last.start} — ${first.end}`;
+};
 ---
 
 <BaseLayout>
@@ -66,20 +74,29 @@ import { resume } from "../content/resume";
       <h2 id="experience-title" class="section__title">
         <span class="section__kicker">02</span> Experience
       </h2>
-      <ol class="roles">
-        {resume.experience.map((role, i) => (
-          <li class="role" data-index={String(i + 1).padStart(2, "0")}>
-            <div class="role__meta">
-              <span class="role__dates">{role.start} — {role.end}</span>
-              <span class="role__company">{role.company}</span>
-            </div>
-            <div class="role__body">
-              <h3 class="role__title">{role.title}</h3>
-              {role.summary && <p class="role__summary">{role.summary}</p>}
-              <ul class="role__bullets">
-                {role.bullets.map((b) => <li>{b}</li>)}
-              </ul>
-            </div>
+      <ol class="companies">
+        {resume.experience.map((group) => (
+          <li class="company">
+            <header class="company__header">
+              <span class="company__span">{companySpan(group)}</span>
+              <h3 class="company__name">{group.company}</h3>
+            </header>
+            <ol class="company__roles">
+              {group.roles.map((role) => (
+                <li class="role">
+                  <div class="role__meta">
+                    <span class="role__dates">{role.start} — {role.end}</span>
+                  </div>
+                  <div class="role__body">
+                    <h4 class="role__title">{role.title}</h4>
+                    {role.summary && <p class="role__summary">{role.summary}</p>}
+                    <ul class="role__bullets">
+                      {role.bullets.map((b) => <li>{b}</li>)}
+                    </ul>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </li>
         ))}
       </ol>
@@ -412,63 +429,97 @@ import { resume } from "../content/resume";
   }
 
   /* ------- experience ------- */
-  .roles {
+  .companies {
     display: grid;
-    gap: clamp(2rem, 4vw, 3rem);
+    gap: clamp(2.5rem, 5vw, 4rem);
   }
-  .role {
+  .company {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.6rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--c-rule-soft);
-    position: relative;
-  }
-  .role::before {
-    content: attr(data-index);
-    position: absolute;
-    top: 1.55rem;
-    right: 0;
-    font-family: var(--f-body);
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    color: var(--c-muted-2);
-    font-variant-numeric: tabular-nums;
+    gap: 1.2rem;
   }
   @media (min-width: 820px) {
-    .role {
+    .company {
       grid-template-columns: 200px 1fr;
       column-gap: 3rem;
     }
-    .role::before {
-      top: 1.55rem;
-    }
   }
-  .role__meta {
+  .company__header {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    padding-top: 0.15rem;
+    gap: 0.35rem;
+    padding-top: 0.05rem;
   }
-  .role__dates {
+  .company__span {
     font-size: 0.82rem;
     letter-spacing: 0.06em;
     color: var(--c-muted);
     font-variant-numeric: tabular-nums;
   }
-  .role__company {
+  .company__name {
     font-family: var(--f-display);
-    font-size: 1.25rem;
-    line-height: 1.15;
+    font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+    line-height: 1.05;
     color: var(--c-ink);
+  }
+
+  .company__roles {
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--c-rule);
+  }
+  @media (min-width: 820px) {
+    .company__roles {
+      padding-left: 1.5rem;
+    }
+  }
+  .company__roles > .role {
+    position: relative;
+  }
+  /* Dot on the vertical rule marking each role start */
+  .company__roles > .role::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.25rem - 3.5px);
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    box-shadow: 0 0 0 4px var(--c-bg);
+  }
+  @media (min-width: 820px) {
+    .company__roles > .role::before {
+      left: calc(-1.5rem - 3.5px);
+    }
+  }
+
+  .role {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+  .role__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .role__dates {
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    color: var(--c-muted);
+    font-variant-numeric: tabular-nums;
+    text-transform: uppercase;
   }
   .role__title {
     font-family: var(--f-body);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     color: var(--c-ink);
-    margin-bottom: 0.4rem;
+    margin: 0.1rem 0 0.55rem;
   }
   .role__summary {
     font-size: 1rem;
