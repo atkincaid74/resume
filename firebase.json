@@ -68,6 +68,11 @@
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "redirects": [
         {
+          "source": "/",
+          "destination": "https://andrew.kincaid.io/",
+          "type": 301
+        },
+        {
           "source": "/:path*",
           "destination": "https://andrew.kincaid.io/:path*",
           "type": 301
