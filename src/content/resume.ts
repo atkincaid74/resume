@@ -9,7 +9,6 @@ export type Role = {
   title: string;
   start: string; // "Aug 2025"
   end: string; // "Present" | "Jan 2024"
-  summary?: string;
   bullets: string[];
 };
 
@@ -18,17 +17,12 @@ export type CompanyGroup = {
   roles: Role[]; // newest first
 };
 
-export type SkillGroup = {
-  label: string;
-  items: string[];
-};
-
 export type Resume = {
   name: string;
   initials: string;
   headline: string;
   positioning: string;
-  summary: string;
+  summary: string[];
   location: string;
   email: string;
   links: {
@@ -39,7 +33,6 @@ export type Resume = {
   };
   highlights: { label: string; body: string }[];
   experience: CompanyGroup[];
-  skills: SkillGroup[];
   education: {
     school: string;
     degree: string;
@@ -54,8 +47,11 @@ export const resume: Resume = {
   initials: "AK",
   headline: "Engineering leader building the systems underwriters actually use.",
   positioning: "Senior Manager, Underwriting Systems",
-  summary:
-    "I lead engineering at the intersection of insurance, platform design, and applied AI. My work lives where business process meets software: sitting with underwriters and business leaders, defining how their work actually happens, and turning that into policy admin systems, raters, workflows, and integrations that hold up in production. I own platforms end-to-end and manage teams across internal engineering and forward-deployed vendor partners.",
+  summary: [
+    "I lead engineering at the intersection of insurance, platform design, and applied AI.",
+    "I work directly with underwriters and business leaders to define how their work actually happens—often formalizing undocumented processes—and translate that into policy admin systems, raters, workflows, and integrations that hold up in production.",
+    "I own platforms end-to-end and manage teams across internal engineering and forward-deployed vendor partners.",
+  ],
   location: "Amityville, NY",
   email: "hello@kincaid.io",
   links: {
@@ -71,7 +67,7 @@ export const resume: Resume = {
     },
     {
       label: "Business-to-systems translation",
-      body: "Partner with underwriters, actuaries, and business leaders to define the process itself, then design the software that supports it. In many cases I help the business codify its own workflow for the first time.",
+      body: "Partner with underwriters, actuaries, and business leaders to define the process itself, then design the software that supports it. Often the first time the business has codified its own workflow.",
     },
     {
       label: "Cross-team leadership",
@@ -90,14 +86,12 @@ export const resume: Resume = {
           title: "Sr. Manager, Underwriting Systems",
           start: "Aug 2025",
           end: "Present",
-          summary:
-            "Own the modernization of multiple MGA verticals from legacy policy admin systems onto a modern, shared policy admin platform. Sit between business leadership, underwriting, actuarial, and engineering — and make the calls on how real-world workflow becomes real software.",
           bullets: [
-            "Drive the transition of multiple MGA verticals off legacy policy admin platforms onto a modern, shared policy admin system — unifying them on one database and accounting ecosystem and aligning policy status, binding, and issuance across the book.",
-            "Make the key design decisions for how business workflow is implemented in the new policy admin system — often defining the process itself alongside underwriters before it can be built.",
             "Manage four internal engineers and direct a four-person forward-deployed team from our platform vendor, running one roadmap across two reporting lines.",
-            "Own the monolith API I built — the system of record for every rater and every integration with internal and external counterparties.",
-            "Serve as the single translation layer between underwriting, actuarial, business leadership, and platform engineering; the person who turns a meeting into a spec and a spec into code.",
+            "Own the monolith API I built — the system of record for rating and integrations across internal and external systems.",
+            "Serve as the translation layer between underwriting, actuarial, business leadership, and platform engineering; the person who turns a meeting into a spec and a spec into code.",
+            "Make the key design decisions for how business workflow is implemented in the new policy admin system — often defining the process itself alongside underwriters before it can be built.",
+            "Drive the transition of multiple MGA verticals from legacy policy admin systems onto a modern, shared platform — unifying them on a single database and accounting ecosystem and aligning policy status, binding, and issuance across the book.",
           ],
         },
         {
@@ -106,9 +100,9 @@ export const resume: Resume = {
           end: "Aug 2025",
           bullets: [
             "Led a backend team of 2–3 engineers and kicked off the underwriting platform modernization effort that became our current policy admin program.",
-            "Architected the first generation of our raters, workflow system, and integration surface — the same components I now own at platform scale.",
-            "Translated underwriting and business requirements into durable backend services, building the patterns the wider team still uses today.",
-            "Promoted into Sr. Manager after demonstrating ownership of scope far beyond the original team charter.",
+            "Architected the first generation of our raters, workflow system, and integration surface — now owned at platform scale.",
+            "Translated underwriting and business requirements into durable backend services, establishing patterns still used today.",
+            "Promoted to Sr. Manager after expanding scope beyond the original team charter.",
           ],
         },
       ],
@@ -123,9 +117,8 @@ export const resume: Resume = {
           bullets: [
             "Led the backend team powering a commercial insurance platform, partnering daily with underwriting, actuarial, product, and compliance.",
             "Built a full policy administration system from scratch — quoting, binding, issuance, endorsements, and the data model under all of it.",
-            "Replaced a vendor-built Excel rater with a Python rater built on a custom DSL, moving rating logic into version control and giving business users a readable, auditable model they could contribute to.",
+            "Replaced a vendor-built Excel rater with a Python rater on a custom DSL, moving rating logic into version control and giving business users a readable, auditable model they could contribute to.",
             "Established CI/CD, testing, and documentation practices the team still runs on; mentored engineers through the shift from scripts to services.",
-            "Supported BI and data science with reporting, debugging, and visualization; helped shape forms, regulatory, and compliance workflows.",
           ],
         },
         {
@@ -147,10 +140,10 @@ export const resume: Resume = {
           start: "Dec 2019",
           end: "Sep 2021",
           bullets: [
-            "Developed and maintained a Python analytical package for the Quantitative Analysis Team, housing the capital adequacy model, projection model, and supporting credit-rating tooling.",
+            "Developed and maintained a Python analytical package housing the capital adequacy model, projection model, and supporting credit-rating tooling used by the Quantitative Analysis Team.",
             "Designed database schemas and supporting objects for the team's analytical and reporting pipelines.",
             "Contributed to a Vue.js SPA and Django REST API serving internal analysts and external clients.",
-            "Led design and implementation of CI/CD on Azure DevOps — first formal deployment pipeline the team ran.",
+            "Led design and implementation of CI/CD on Azure DevOps — the first formal deployment pipeline the team ran.",
           ],
         },
         {
@@ -171,53 +164,6 @@ export const resume: Resume = {
             "First exposure to treating insurance models as software — version-controlled, testable, reviewable.",
           ],
         },
-      ],
-    },
-  ],
-  skills: [
-    {
-      label: "Domain",
-      items: [
-        "Underwriting systems",
-        "Policy administration",
-        "Rating & raters",
-        "Workflow automation",
-        "Insurance operations",
-        "Regulatory & compliance workflows",
-      ],
-    },
-    {
-      label: "Leadership",
-      items: [
-        "Direct engineering management",
-        "Forward-deployed / vendor team direction",
-        "Cross-functional stakeholder translation",
-        "Platform roadmap ownership",
-        "Mentorship & team growth",
-      ],
-    },
-    {
-      label: "Engineering",
-      items: [
-        "Python",
-        "FastAPI",
-        "Django",
-        "SQL / PostgreSQL",
-        "JavaScript / TypeScript",
-        "Vue.js",
-        "HTML / CSS",
-        "GCP",
-        "CI/CD",
-        "API & integration design",
-      ],
-    },
-    {
-      label: "Applied AI",
-      items: [
-        "LLM-assisted workflows",
-        "Document & form extraction",
-        "Underwriter copilots",
-        "Agentic automation for ops",
       ],
     },
   ],
