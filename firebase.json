@@ -1,0 +1,78 @@
+{
+  "hosting": [
+    {
+      "target": "primary",
+      "public": "dist",
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|woff2|woff|jpg|jpeg|png|gif|webp|avif)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "/andrew-kincaid-resume.pdf",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600, must-revalidate"
+            },
+            {
+              "key": "Content-Disposition",
+              "value": "inline; filename=\"andrew-kincaid-resume.pdf\""
+            }
+          ]
+        },
+        {
+          "source": "**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        { "source": "/resume", "destination": "/andrew-kincaid-resume.pdf", "type": 302 },
+        { "source": "/cv", "destination": "/andrew-kincaid-resume.pdf", "type": 302 }
+      ]
+    },
+    {
+      "target": "mirror",
+      "public": "dist",
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "redirects": [
+        {
+          "source": "/:path*",
+          "destination": "https://andrew.kincaid.io/:path*",
+          "type": 301
+        }
+      ]
+    }
+  ]
+}

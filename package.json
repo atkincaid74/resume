@@ -1,0 +1,29 @@
+{
+  "name": "andrew-kincaid-resume",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Andrew Kincaid — personal resume site and PDF generator",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pdf": "node scripts/generate-pdf.mjs",
+    "build:full": "astro build && node scripts/generate-pdf.mjs",
+    "deploy": "npm run build:full && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/inter": "^5.1.1",
+    "@fontsource/instrument-serif": "^5.1.1",
+    "astro": "^6.1.8"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

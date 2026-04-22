@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "kincaid-resume"
+  },
+  "targets": {
+    "kincaid-resume": {
+      "hosting": {
+        "primary": [
+          "kincaid-resume"
+        ],
+        "mirror": [
+          "kincaid-resume-mirror"
+        ]
+      }
+    }
+  }
+}

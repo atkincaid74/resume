@@ -1,0 +1,37 @@
+# Build output
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Firebase
+.firebase/
+firebase-debug.log
+*-debug.log
+
+# Playwright
+/playwright-report/
+/playwright/.cache/
+
+# Local overrides
+firebase-service-account.json

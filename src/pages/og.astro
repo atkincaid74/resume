@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { resume } from "../content/resume";
+---
+
+<BaseLayout
+  title="og"
+  description={resume.summary}
+  path="/og"
+  noIndex
+>
+  <div class="og">
+    <div class="og__frame">
+      <div class="og__top">
+        <span class="og__mark">{resume.initials}</span>
+        <span class="og__rule"></span>
+        <span class="og__kicker">{resume.positioning}</span>
+      </div>
+      <h1 class="og__h">{resume.headline}</h1>
+      <div class="og__bottom">
+        <p class="og__name">{resume.name}</p>
+        <p class="og__url">andrew.kincaid.io</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f2ea;
+    color: #1b1b1a;
+    overflow: hidden;
+  }
+  header.masthead,
+  footer.footer {
+    display: none !important;
+  }
+
+  .og {
+    width: 1200px;
+    height: 630px;
+    padding: 64px;
+    background:
+      radial-gradient(
+        800px 400px at 85% 15%,
+        rgba(47, 74, 58, 0.12),
+        transparent 60%
+      ),
+      #f6f2ea;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  .og__frame {
+    flex: 1;
+    border: 1px solid #d9d1c2;
+    border-radius: 18px;
+    padding: 58px 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #fbf8f2 0%, #f6f2ea 100%);
+    box-shadow: inset 0 0 0 1px rgba(47, 74, 58, 0.04);
+  }
+  .og__top {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .og__mark {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 56px;
+    color: #2f4a3a;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .og__rule {
+    width: 56px;
+    height: 1px;
+    background: #b4ac9a;
+  }
+  .og__kicker {
+    font-family: "Inter Variable", Inter, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #5e5a54;
+    font-weight: 500;
+  }
+  .og__h {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 84px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: #1b1b1a;
+    max-width: 20ch;
+    margin: 0;
+  }
+  .og__bottom {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-top: 1px solid #d9d1c2;
+    padding-top: 24px;
+  }
+  .og__name {
+    font-family: "Inter Variable", Inter, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: #1b1b1a;
+    margin: 0;
+  }
+  .og__url {
+    font-family: "Inter Variable", Inter, sans-serif;
+    font-size: 18px;
+    color: #2f4a3a;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+</style>
