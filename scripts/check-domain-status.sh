@@ -38,10 +38,15 @@ def records(section):
 
 need_host = records(d.get("requiredDnsUpdates", {}).get("desired", []))
 need_cert = records(cert.get("verification", {}).get("dns", {}).get("desired", []))
-if need_host or need_cert:
+actionable = [r for r in need_host + need_cert if r[0] and r[0] != "NONE"]
+if actionable:
     print("  DNS still needed:")
-    for a, t, n, v in need_host + need_cert:
-        print(f"    {a:4}  {t:6}  {n}  =>  {v}")
+    for a, t, n, v in actionable:
+        a = a or "?"
+        t = t or "?"
+        n = n or "?"
+        v = v or "?"
+        print(f"    {a:5}  {t:6}  {n}  =>  {v}")
 else:
     print("  DNS: nothing outstanding.")
 '
