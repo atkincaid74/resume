@@ -57,8 +57,8 @@ export const resume: Resume = {
   links: {
     site: { label: "kincaid.io", href: "https://kincaid.io" },
     ambr: { label: "getambr.app", href: "https://getambr.app" },
-    linkedin: { label: "LinkedIn", href: "https://www.linkedin.com/in/andrew-kincaid" },
-    github: { label: "GitHub", href: "https://github.com/kincaidio" },
+    linkedin: { label: "LinkedIn", href: "https://www.linkedin.com/in/a-t-kin" },
+    github: { label: "GitHub", href: "https://github.com/atkincaid74" },
   },
   highlights: [
     {
