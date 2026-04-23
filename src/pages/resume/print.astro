@@ -55,7 +55,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
               {group.roles.map((role) => (
                 <li class="doc__role">
                   <p class="doc__role-title">
-                    <strong>{role.title}</strong>
+                    <strong set:html={role.title.replace("→", '<span class="doc__role-arrow">→</span>')} />
                     <span class="doc__role-dates">{role.start} – {role.end}</span>
                   </p>
                   <ul class="doc__bullets">
@@ -272,6 +272,11 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
   }
   .doc__role-title strong {
     font-weight: 600;
+  }
+  .doc__role-arrow {
+    display: inline-block;
+    transform: translateY(0.12em);
+    margin: 0 0.05em;
   }
   .doc__role-dates {
     font-size: 8.8pt;

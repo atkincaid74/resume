@@ -151,7 +151,7 @@ async function main() {
       format: "Letter",
       printBackground: true,
       preferCSSPageSize: true,
-      margin: { top: "0in", right: "0in", bottom: "0in", left: "0in" },
+      margin: { top: "0.45in", right: "0.65in", bottom: "0.45in", left: "0.65in" },
     });
     await copyFile(PDF_OUT_DIST, PDF_OUT_PUBLIC);
     console.log(`  ✓ ${PDF_OUT_DIST}`);
