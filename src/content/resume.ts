@@ -95,7 +95,7 @@ export const resume: Resume = {
           bullets: [
             "Built the full policy administration system from scratch — quoting, binding, issuance, endorsements, and the data model under all of it.",
             "Replaced a vendor-built Excel rater with a Python rater on a custom DSL — moving rating logic into version control and giving actuarial a readable, auditable model. Designed the DSL so state DOI reviewers could read and reason about the rater during rate filings.",
-            "Led backend development for a commercial insurance platform, partnering daily with underwriting, actuarial, product, and compliance.",
+            "Led backend development for a commercial insurance platform, partnering daily with underwriting and actuarial.",
             "Established CI/CD, testing, and documentation practices the team still runs on; mentored engineers through the shift from scripts to services.",
           ],
         },
