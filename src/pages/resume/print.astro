@@ -43,6 +43,26 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     </section>
 
     <section class="doc__section">
+      <h2 class="doc__h">Selected Projects</h2>
+      <ul class="doc__projects">
+        {resume.projects.map((p) => (
+          <li class="doc__project">
+            <p class="doc__project-title">
+              <strong>{p.title}</strong>
+              {p.link && (
+                <>
+                  <span class="sep">·</span>
+                  <a href={p.link.href}>{p.link.label}</a>
+                </>
+              )}
+            </p>
+            <p class="doc__project-body">{p.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="doc__section">
       <h2 class="doc__h">Experience</h2>
       <ol class="doc__companies">
         {resume.experience.map((group) => (
@@ -182,6 +202,36 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
   }
   .doc__summary p:first-child {
     color: #15140f;
+  }
+
+  .doc__projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .doc__project {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .doc__project-title {
+    font-size: 10pt;
+    color: #15140f;
+    margin: 0 0 0.08rem;
+  }
+  .doc__project-title strong {
+    font-weight: 600;
+  }
+  .doc__project-title .sep {
+    margin: 0 0.3rem;
+    color: #8a847a;
+  }
+  .doc__project-body {
+    font-size: 9.6pt;
+    line-height: 1.44;
+    color: #1f1e1a;
+    margin: 0;
   }
 
   .doc__section {

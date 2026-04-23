@@ -56,13 +56,26 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
       </div>
     </section>
 
-    <section class="highlights wrap" aria-labelledby="highlights-title">
-      <h2 id="highlights-title" class="section__title">Selected strengths</h2>
-      <ul class="highlights__grid">
-        {resume.highlights.map((h) => (
-          <li class="highlight">
-            <h3 class="highlight__label">{h.label}</h3>
-            <p class="highlight__body">{h.body}</p>
+    <section class="projects wrap" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section__title">Selected Projects</h2>
+      <ul class="projects__grid">
+        {resume.projects.map((p) => (
+          <li class="project">
+            <h3 class="project__label">
+              {p.title}
+              {p.link && (
+                <>
+                  {" "}
+                  <a
+                    class="project__link"
+                    href={p.link.href}
+                    target="_blank"
+                    rel="noopener"
+                  >{p.link.label}</a>
+                </>
+              )}
+            </h3>
+            <p class="project__body">{p.body}</p>
           </li>
         ))}
       </ul>
@@ -330,29 +343,29 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     border-top: 0;
   }
 
-  /* ------- highlights ------- */
-  .highlights__grid {
+  /* ------- projects ------- */
+  .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 0;
   }
-  .highlight {
+  .project {
     padding: 1.6rem 1.8rem 1.6rem 0;
     border-top: 1px solid var(--c-rule-soft);
     position: relative;
   }
-  .highlight:first-child {
+  .project:first-child {
     border-top-color: var(--c-ink);
   }
   @media (min-width: 760px) {
-    .highlights__grid {
+    .projects__grid {
       grid-template-columns: 1fr 1fr;
       column-gap: 2.5rem;
     }
-    .highlight:nth-child(2) {
+    .project:nth-child(2) {
       border-top-color: var(--c-ink);
     }
-    .highlight::before {
+    .project::before {
       content: "";
       position: absolute;
       left: -1.25rem;
@@ -361,18 +374,27 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
       width: 1px;
       background: var(--c-rule-soft);
     }
-    .highlight:nth-child(odd)::before {
+    .project:nth-child(odd)::before {
       display: none;
     }
   }
-  .highlight__label {
+  .project__label {
     font-family: var(--f-body);
     font-size: 1rem;
     color: var(--c-accent);
     font-weight: 600;
     margin-bottom: 0.45rem;
   }
-  .highlight__body {
+  .project__link {
+    font-weight: 500;
+    color: var(--c-muted);
+    letter-spacing: 0;
+    margin-left: 0.35rem;
+  }
+  .project__link:hover {
+    color: var(--c-accent);
+  }
+  .project__body {
     font-size: 1.02rem;
     line-height: 1.55;
     color: var(--c-ink-soft);
