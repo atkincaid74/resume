@@ -35,7 +35,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
         <span class="eyebrow__sep" aria-hidden="true">·</span>
         <span>{resume.location}</span>
       </p>
-      <h1 class="hero__headline">{resume.headline}</h1>
+      <h1 class="hero__headline"><span>{resume.headline}</span></h1>
       <div class="hero__actions">
         <a href={resume.pdfFile} class="btn btn--solid" download>
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -277,6 +277,17 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     letter-spacing: -0.01em;
     max-width: 18ch;
     color: var(--c-ink);
+  }
+  .hero__headline span {
+    background-image: linear-gradient(
+      180deg,
+      var(--c-ink) 0 72%,
+      var(--c-accent) 72% 100%
+    );
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .hero__actions {
     display: flex;
