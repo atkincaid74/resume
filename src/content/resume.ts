@@ -81,7 +81,6 @@ export const resume: Resume = {
             "Led a backend team of 2–3 engineers and stood up the underwriting platform modernization effort that became today's policy admin program.",
             "Architected the first generation of our raters, workflow system, and integration surface — now owned at platform scale.",
             "Translated underwriting and business requirements into durable backend services, establishing patterns still used today.",
-            "Promoted to Sr. Manager after expanding scope beyond the original team charter.",
           ],
         },
       ],
