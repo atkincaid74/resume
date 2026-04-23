@@ -43,26 +43,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     </section>
 
     <section class="doc__section">
-      <h2 class="doc__h">Selected Projects</h2>
-      <ul class="doc__projects">
-        {resume.projects.map((p) => (
-          <li class="doc__project">
-            <p class="doc__project-title">
-              <strong>{p.title}</strong>
-              {p.link && (
-                <>
-                  <span class="sep">·</span>
-                  <a href={p.link.href}>{p.link.label}</a>
-                </>
-              )}
-            </p>
-            <p class="doc__project-body">{p.body}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="doc__section">
       <h2 class="doc__h">Experience</h2>
       <ol class="doc__companies">
         {resume.experience.map((group) => (
@@ -74,8 +54,10 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
             <ol class="doc__roles">
               {group.roles.map((role) => (
                 <li class="doc__role">
-                  <p class="doc__role-dates">{role.start} – {role.end}</p>
-                  <p class="doc__role-title"><strong>{role.title}</strong></p>
+                  <p class="doc__role-title">
+                    <strong>{role.title}</strong>
+                    <span class="doc__role-dates">{role.start} – {role.end}</span>
+                  </p>
                   <ul class="doc__bullets">
                     {role.bullets.map((b) => <li>{b}</li>)}
                   </ul>
@@ -104,13 +86,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
       </div>
     </section>
 
-    <footer class="doc__foot">
-      <span>{resume.links.site.label}</span>
-      <span class="sep">·</span>
-      <span>{resume.links.ambr.label}</span>
-      <span class="sep">·</span>
-      <span>{resume.email}</span>
-    </footer>
   </article>
 </BaseLayout>
 
@@ -204,36 +179,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     color: #15140f;
   }
 
-  .doc__projects {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.4rem;
-  }
-  .doc__project {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .doc__project-title {
-    font-size: 10pt;
-    color: #15140f;
-    margin: 0 0 0.08rem;
-  }
-  .doc__project-title strong {
-    font-weight: 600;
-  }
-  .doc__project-title .sep {
-    margin: 0 0.3rem;
-    color: #8a847a;
-  }
-  .doc__project-body {
-    font-size: 9.6pt;
-    line-height: 1.44;
-    color: #1f1e1a;
-    margin: 0;
-  }
-
   .doc__section {
     margin-top: 0.75rem;
   }
@@ -294,7 +239,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
 
   .doc__roles {
     display: grid;
-    gap: 0.55rem;
+    gap: 0.85rem;
     padding: 0 0 0 0.9rem;
     list-style: none;
     margin: 0 0 0 0.05rem;
@@ -316,27 +261,31 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     background: #2f4a3a;
     box-shadow: 0 0 0 2.5px #ffffff;
   }
-  .doc__role-dates {
-    font-size: 8.8pt;
-    color: #5e5a54;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.05rem;
-  }
   .doc__role-title {
     font-size: 10.8pt;
     color: #15140f;
-    margin: 0;
+    margin: 0 0 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
   }
   .doc__role-title strong {
     font-weight: 600;
+  }
+  .doc__role-dates {
+    font-size: 8.8pt;
+    color: #5e5a54;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
   }
   .doc__bullets {
     margin: 0.15rem 0 0;
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 0.15rem;
+    gap: 0.22rem;
   }
   .doc__bullets li {
     position: relative;
@@ -392,16 +341,4 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     background: #2f4a3a;
   }
 
-  .doc__foot {
-    margin-top: 1.1rem;
-    padding-top: 0.45rem;
-    border-top: 0.5px solid #cfc6b4;
-    font-size: 8.6pt;
-    color: #5e5a54;
-    text-align: center;
-  }
-  .doc__foot .sep {
-    margin: 0 0.45rem;
-    color: #8a847a;
-  }
 </style>

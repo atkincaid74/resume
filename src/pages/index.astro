@@ -56,31 +56,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
       </div>
     </section>
 
-    <section class="projects wrap" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section__title">Selected Projects</h2>
-      <ul class="projects__grid">
-        {resume.projects.map((p) => (
-          <li class="project">
-            <h3 class="project__label">
-              {p.title}
-              {p.link && (
-                <>
-                  {" "}
-                  <a
-                    class="project__link"
-                    href={p.link.href}
-                    target="_blank"
-                    rel="noopener"
-                  >{p.link.label}</a>
-                </>
-              )}
-            </h3>
-            <p class="project__body">{p.body}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-
     <section id="experience" class="experience wrap" aria-labelledby="experience-title">
       <h2 id="experience-title" class="section__title">Experience</h2>
       <ol class="companies">
@@ -93,8 +68,10 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
             <ol class="company__roles">
               {group.roles.map((role) => (
                 <li class="role">
-                  <p class="role__dates">{role.start} — {role.end}</p>
-                  <h4 class="role__title">{role.title}</h4>
+                  <h4 class="role__title">
+                    {role.title}
+                    <span class="role__dates">{role.start} – {role.end}</span>
+                  </h4>
                   <ul class="role__bullets">
                     {role.bullets.map((b) => <li>{b}</li>)}
                   </ul>
@@ -343,64 +320,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     border-top: 0;
   }
 
-  /* ------- projects ------- */
-  .projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 0;
-  }
-  .project {
-    padding: 1.6rem 1.8rem 1.6rem 0;
-    border-top: 1px solid var(--c-rule-soft);
-    position: relative;
-  }
-  .project:first-child {
-    border-top-color: var(--c-ink);
-  }
-  @media (min-width: 760px) {
-    .projects__grid {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 2.5rem;
-    }
-    .project:nth-child(2) {
-      border-top-color: var(--c-ink);
-    }
-    .project::before {
-      content: "";
-      position: absolute;
-      left: -1.25rem;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--c-rule-soft);
-    }
-    .project:nth-child(odd)::before {
-      display: none;
-    }
-  }
-  .project__label {
-    font-family: var(--f-body);
-    font-size: 1rem;
-    color: var(--c-accent);
-    font-weight: 600;
-    margin-bottom: 0.45rem;
-  }
-  .project__link {
-    font-weight: 500;
-    color: var(--c-muted);
-    letter-spacing: 0;
-    margin-left: 0.35rem;
-  }
-  .project__link:hover {
-    color: var(--c-accent);
-  }
-  .project__body {
-    font-size: 1.02rem;
-    line-height: 1.55;
-    color: var(--c-ink-soft);
-    max-width: 44ch;
-  }
-
   /* ------- experience ------- */
   .companies {
     display: grid;
@@ -438,7 +357,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
 
   .company__roles {
     display: grid;
-    gap: 1.75rem;
+    gap: 2.25rem;
     position: relative;
     padding-left: 1.25rem;
     border-left: 1px solid var(--c-rule);
@@ -471,19 +390,23 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
   .role {
     display: block;
   }
-  .role__dates {
-    font-size: 0.85rem;
-    color: var(--c-muted);
-    font-variant-numeric: tabular-nums;
-    margin: 0 0 0.15rem;
-  }
   .role__title {
     font-family: var(--f-body);
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     color: var(--c-ink);
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .role__dates {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--c-muted);
+    font-variant-numeric: tabular-nums;
   }
   .role__bullets {
     display: grid;
