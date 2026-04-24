@@ -46,7 +46,7 @@ export const resume: Resume = {
   headline: "Engineering leader building the systems underwriters actually use.",
   positioning: "Senior Manager, Underwriting Systems",
   summary: [
-    "I lead engineering at the intersection of insurance, platform design, and applied AI.",
+    "I lead engineering at the intersection of insurance, platform design, and AI-enabled workflow automation.",
     "I work directly with underwriters and business leaders to define how their work actually happens — often formalizing undocumented processes — and translate that into policy administration systems, raters, workflows, and integrations that scale in production.",
     "I own platforms end-to-end and manage teams across internal engineering and forward-deployed vendor partners.",
   ],
@@ -66,11 +66,12 @@ export const resume: Resume = {
           start: "Aug 2025",
           end: "Present",
           bullets: [
-            "Manage four internal engineers and direct a four-person forward-deployed team from our platform vendor — one roadmap across two reporting lines.",
-            "Own the monolith API I built — the system of record for rating and integrations across internal and external systems. Roughly 1,000 insureds quoted and ~$15M in bound premium per month.",
+            "Manage four internal engineers and direct a four-person forward-deployed vendor team, driving a single roadmap across two reporting lines.",
+            "Built and own the core API platform — the system of record for rating and integrations across internal and external systems. Roughly 1,000 insureds quoted and ~$15M in bound premium per month.",
             "Serve as the translation layer between underwriting, actuarial, business leadership, and platform engineering — the person who turns a meeting into a spec and a spec into code.",
             "Make the key design decisions for how business workflow lands in the new policy admin system — often defining the process itself with underwriters before it gets built.",
             "Drive the consolidation of multiple MGA verticals onto a shared, modern policy admin platform — unifying database and accounting, and standardizing policy lifecycle across the book.",
+            "Introduced AI-assisted workflows into engineering and underwriting processes, including building an MCP layer over our policy admin system to turn manual engineering tasks into callable tooling, and using Claude to accelerate spec generation, debugging, and internal tooling.",
           ],
         },
         {
