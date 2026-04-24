@@ -120,7 +120,8 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
 
   .doc {
     max-width: 100%;
-    padding: 0;
+    /* Keep glyph overhangs and custom bullets away from the PDF crop edge. */
+    padding: 0 0.05in;
     background: #ffffff;
   }
 
@@ -278,7 +279,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     font-size: 0.85em;
     margin: 0 0.15em;
     position: relative;
-    top: 0.18em;
+    top: 0.05em;
   }
   .doc__role-dates {
     font-size: 8.8pt;
