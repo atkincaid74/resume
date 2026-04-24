@@ -92,7 +92,7 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
 <style is:global>
   @page {
     size: Letter;
-    margin: 0;
+    margin: 0.45in 0.65in;
   }
 
   html,
@@ -105,7 +105,6 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
     font-family: var(--f-body);
     font-size: 10pt;
     line-height: 1.42;
-    padding: 0.45in 0.65in;
   }
 
   /* Suppress nav/footer chrome from other layouts if it leaks in */
@@ -276,7 +275,8 @@ const companySpan = (group: (typeof resume.experience)[number]) => {
   }
   .doc__role-arrow {
     display: inline-block;
-    transform: translateY(0.12em);
+    transform: translateY(0.22em);
+    font-size: 0.88em;
     margin: 0 0.05em;
   }
   .doc__role-dates {
