@@ -32,11 +32,9 @@ export const resume: Resume = {
             "Manage four internal engineers and direct a four-person forward-deployed vendor team, driving a single roadmap across two reporting lines.",
             "Built and own the core API platform — the system of record for rating and integrations across internal and external systems. Roughly 1,000 insureds quoted and ~$15M in bound premium per month.",
             "Serve as the translation layer between underwriting, actuarial, operations, business leadership, and platform engineering — formalizing ambiguous operational workflows into scalable systems, integrations, and automation.",
-            "Make the key design decisions for how business workflow lands in the new policy admin system — often defining the process itself with underwriters before it gets built.",
+            "Own the design decisions for how business workflow lands in the new policy admin system — partnering with underwriting leadership to define the process itself before it gets built, turning undocumented operations into rating logic, integrations, and automation.",
             "Drive the consolidation of multiple MGA verticals onto a shared, modern policy admin platform — unifying database and accounting, and standardizing policy lifecycle across the book.",
-            "Partner directly with underwriting leadership to formalize undocumented operational processes into scalable workflows, policy administration capabilities, rating logic, integrations, and automation systems.",
-            "Introduced AI-assisted engineering and operational workflows, including building MCP-style tooling layers over policy administration systems to expose internal workflows as callable tools for automation, debugging, specification generation, and engineering acceleration.",
-            "Drove practical adoption of LLM-assisted workflows across engineering and underwriting operations, focusing on productivity gains, faster iteration cycles, workflow automation, and internal tooling enablement rather than experimental AI research.",
+            "Drove practical adoption of AI-assisted workflows across engineering and underwriting operations — building MCP-style tooling over policy administration systems to expose internal workflows as callable tools for automation, debugging, and specification generation.",
           ],
         },
         {
