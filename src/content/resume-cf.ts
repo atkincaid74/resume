@@ -31,9 +31,9 @@ export const resume: Resume = {
           bullets: [
             "Manage four internal engineers and direct a four-person forward-deployed vendor team, driving a single roadmap across two reporting lines.",
             "Built and own the core API platform — the system of record for rating and integrations across internal and external systems. Roughly 1,000 insureds quoted and ~$15M in bound premium per month.",
+            "Drive the consolidation of multiple MGA verticals onto a shared, modern policy admin platform — unifying database and accounting, and standardizing policy lifecycle across the book.",
             "Serve as the translation layer between underwriting, actuarial, operations, business leadership, and platform engineering — formalizing ambiguous operational workflows into scalable systems, integrations, and automation.",
             "Own the design decisions for how business workflow lands in the new policy admin system — partnering with underwriting leadership to define the process itself before it gets built, turning undocumented operations into rating logic, integrations, and automation.",
-            "Drive the consolidation of multiple MGA verticals onto a shared, modern policy admin platform — unifying database and accounting, and standardizing policy lifecycle across the book.",
             "Drove practical adoption of AI-assisted workflows across engineering and underwriting operations — building MCP-style tooling over policy administration systems to expose internal workflows as callable tools for automation, debugging, and specification generation.",
           ],
         },
