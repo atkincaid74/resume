@@ -95,6 +95,8 @@ function startServer() {
 
 const PDF_OUT_DIST = join(ROOT, "dist", "andrew-kincaid-resume.pdf");
 const PDF_OUT_PUBLIC = join(ROOT, "public", "andrew-kincaid-resume.pdf");
+const PDF_CF_OUT_DIST = join(ROOT, "dist", "andrew-kincaid-resume-cf.pdf");
+const PDF_CF_OUT_PUBLIC = join(ROOT, "public", "andrew-kincaid-resume-cf.pdf");
 const OG_OUT_DIST = join(ROOT, "dist", "og-image.png");
 const OG_OUT_PUBLIC = join(ROOT, "public", "og-image.png");
 
@@ -160,6 +162,29 @@ async function main() {
     });
     await copyFile(PDF_OUT_DIST, PDF_OUT_PUBLIC);
     console.log(`  ✓ ${PDF_OUT_DIST}`);
+
+    // ----- PDF (CF variant — tailored resume served at /resume) -----
+    console.log("▸ Rendering /resume/print-cf → PDF");
+    const pageCf = await context.newPage();
+    pageCf.setDefaultTimeout(30_000);
+    await pageCf.setViewportSize({ width: 691, height: 970 });
+    await pageCf.goto(`${HOST}/resume/print-cf`, NAV);
+    await pageCf.emulateMedia({ media: "print" });
+    try {
+      await pageCf.evaluate(() => document.fonts && document.fonts.ready);
+    } catch {
+      /* old Chromium safety */
+    }
+    await sleep(150);
+    await pageCf.pdf({
+      path: PDF_CF_OUT_DIST,
+      format: "Letter",
+      printBackground: true,
+      preferCSSPageSize: true,
+      margin: { top: "0.45in", right: "0.65in", bottom: "0.45in", left: "0.65in" },
+    });
+    await copyFile(PDF_CF_OUT_DIST, PDF_CF_OUT_PUBLIC);
+    console.log(`  ✓ ${PDF_CF_OUT_DIST}`);
 
     // ----- OG image -----
     console.log("▸ Rendering /og → PNG");

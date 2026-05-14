@@ -30,6 +30,19 @@
           ]
         },
         {
+          "source": "/andrew-kincaid-resume-cf.pdf",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600, must-revalidate"
+            },
+            {
+              "key": "Content-Disposition",
+              "value": "inline; filename=\"andrew-kincaid-resume.pdf\""
+            }
+          ]
+        },
+        {
           "source": "**/*.html",
           "headers": [
             {
@@ -56,7 +69,6 @@
         }
       ],
       "redirects": [
-        { "source": "/resume", "destination": "/andrew-kincaid-resume.pdf", "type": 302 },
         { "source": "/cv", "destination": "/andrew-kincaid-resume.pdf", "type": 302 }
       ]
     },
