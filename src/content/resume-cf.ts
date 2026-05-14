@@ -11,10 +11,7 @@ export const resume: Resume = {
   headline: "Engineering leader building the systems underwriters actually use.",
   positioning: "Senior Manager, Underwriting Systems",
   summary: [
-    "Senior engineering leader specializing in insurance platform modernization, underwriting workflow automation, and AI-enabled operational transformation.",
-    "Experienced building and scaling policy administration systems, raters, integrations, and underwriting platforms in complex MGA environments.",
-    "Known for bridging underwriting, actuarial, operations, and engineering teams to formalize ambiguous business processes into scalable systems and automation.",
-    "Hands-on technical leader with deep experience in Python backend systems, workflow architecture, AI-assisted engineering practices, and operational tooling.",
+    "Senior engineering leader specializing in insurance platform modernization, underwriting workflow automation, and AI-enabled operational transformation. Deep experience building and scaling policy administration systems, raters, and underwriting platforms in complex MGA environments, bridging underwriting, actuarial, operations, and engineering teams to formalize ambiguous business processes into scalable systems and automation. Hands-on across Python backend systems, workflow architecture, AI-assisted engineering practices, and operational tooling.",
   ],
   location: "Amityville, NY",
   email: "hello@kincaid.io",
